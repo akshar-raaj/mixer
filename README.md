@@ -5,3 +5,33 @@ Getting started with Mix!
 Project generated using:
 
     mix new hello
+
+## Learnings
+
+### Application
+
+Applications have environment.
+
+Application environment can be set inside `application/0` using `:env`keyword.
+
+Application environments can be read in the code using:
+
+    Application.fetch_env!(:app_name, :env_name)
+    # Example
+    Application.fetch_env!(:hello, :author)
+
+### Config
+
+Mix projects, by default, do not have a `config` directory.
+
+Created a `config` directory and `config.exs`.
+
+    mkdir config
+    touch config/config.exs
+
+Application environments can be updated in `config.exs`.
+
+    import Config
+    config :hello, :author, "Raaj Akshar"
+
+
