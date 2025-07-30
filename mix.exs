@@ -15,7 +15,12 @@ defmodule Hello.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      env: [author: "Akshar Raaj", organisation: :ascend]
+      env: [
+        author: "Akshar Raaj",
+        location: "Hyderabad",
+        organisation: :ascend,
+        cto: "Prasad Sristi"
+      ]
     ]
   end
 
