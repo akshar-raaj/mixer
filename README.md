@@ -34,4 +34,12 @@ Application environments can be updated in `config.exs`.
     import Config
     config :hello, :author, "Raaj Akshar"
 
+### System
+
+Environment variables are different from application environments.
+
+Env variables can be read using `System.fetch_env` and `System.get_env`.
+
+Other thing worth mentioning, didn't have to import `System` module before using it.
+
 
