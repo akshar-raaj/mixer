@@ -15,4 +15,17 @@ defmodule Hello do
   def hello do
     :world
   end
+
+  @doc """
+  Greets a person by name.
+
+  ## Examples
+
+      iex> Hello.greet("Alice")
+      "Hello, Alice!"
+
+  """
+  def greet(name) do
+    "Hello, #{name}!"
+  end
 end
