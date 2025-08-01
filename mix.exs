@@ -30,7 +30,8 @@ defmodule Hello.MixProject do
       {:ex_aws, "~> 2.4"},
       {:ex_aws_s3, "~> 2.4"},
       {:hackney, "~> 1.18"},
-      {:sweet_xml, "~> 0.7"}
+      {:sweet_xml, "~> 0.7"},
+      {:req, "~> 0.5.15"}
     ]
   end
 end
