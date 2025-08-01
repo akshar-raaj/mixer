@@ -14,10 +14,10 @@ defmodule Hello.Github do
   @doc """
     Retrieves a repository information
   """
-  def repo_description(repo_name \\ "akshar-raaj/mixer") do
+  def repo_attribute(repo_name \\ "akshar-raaj/mixer", field) do
     full_url = @base <> @repo_fragment <> repo_name
     case Req.get(full_url) do
-      {:ok, %{status: 200, body: %{"description" => desc}}} -> desc
+      {:ok, %{status: 200, body: body}} when is_map(body) -> Map.get(body, field)
       {:ok, %{status: 404}} -> "Repository not found"
       {:error, %{reason: reason}} -> "Error. Reason: #{IO.inspect reason}"
     end
