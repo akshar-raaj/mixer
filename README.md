@@ -51,3 +51,27 @@ Other thing worth mentioning, didn't have to import `System` module before using
 Dependencies are added in `deps/0` in `mix.exs`.
 
 Each dependency is a length 2 tuple. Example `{:req, "~> 0.5.15"}`. The first element of the tuple is an atom, second element is a string.
+
+### Ecto
+
+`Ecto` is needed to interact with the database. The different dependencies needed are:
+- :postgrex
+- :ecto
+- :ecto_sql
+
+Once, the dependencies are needed, perform `mix deps.get`.
+
+#### Repository
+
+Define a Repository, say `Hello.Repo`. It must `use Ecto.Repo`.
+
+#### Schema
+
+Define a Schema, say `Hello.Polls`. It must `use Ecto.Schema`
+
+#### Insert
+
+Create a Poll.
+
+    poll = %Hello.Polls{question: "Who was Dr. Kalam", difficulty: "easy"}
+    Hello.Repo.insert!(poll)
