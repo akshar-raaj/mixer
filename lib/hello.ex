@@ -3,7 +3,7 @@ defmodule Hello do
     :world
   end
 
-  def greet(name) do
+  def greet(name \\ "akshar") do
     "Hello, #{name}!"
   end
 end
