@@ -1,4 +1,4 @@
-defmodule Hello.Polls do
+defmodule Hello.Poll do
   @moduledoc """
     Represents a Question in the Polling application.
 
@@ -9,5 +9,6 @@ defmodule Hello.Polls do
   schema "polls" do
     field :question, :string
     field :difficulty, :string
+    has_many :choices, Hello.Choice
   end
 end
