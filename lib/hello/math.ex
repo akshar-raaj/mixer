@@ -7,7 +7,7 @@ defmodule Hello.Math do
     a - b
   end
 
-  def divide(num, 0) do
+  def divide(_num, 0) do
     IO.puts("Invalid denominator")
     0
   end
