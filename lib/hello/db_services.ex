@@ -4,7 +4,8 @@ defmodule Hello.DB.Service do
   """
 
   def create_choice(answer, vote_count \\ 0) do
-    changeset = Hello.Choice.changeset(%Hello.Choice{}, %{answer: answer, vote_count: vote_count})
-    Hello.Repo.insert(changeset)
+    %Hello.Choice{}
+    |> Hello.Choice.changeset(%{answer: answer, vote_count: vote_count})
+    |> Hello.Repo.insert
   end
 end
