@@ -12,3 +12,4 @@ config :hello, Hello.Repo,
   username: "postgres",
   hostname: "postgres-db",
   password: "postgres"
+config :hello, ecto_repos: [Hello.Repo]
