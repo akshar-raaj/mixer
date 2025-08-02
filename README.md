@@ -103,3 +103,13 @@ Getting a poll by primary key
 Getting a poll by arbitrary field
 
     Hello.Repo.get_by(Hello.Polls, question: "Who is Dr. Singh")
+
+#### Advanced Queries
+
+Simple query is possible through just sending the schema as a parameter to `Repo.all` and `Repo.get`.
+
+Find polls with difficulty `easy`.
+
+    import Ecto.Query  # Needed to use the `from` macro
+    query = from p in Hello.Polls, where: p.difficulty == "easy", select: p
+    polls = Hello.Repo.all(query)
