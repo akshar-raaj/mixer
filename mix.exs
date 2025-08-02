@@ -34,7 +34,8 @@ defmodule Hello.MixProject do
       {:req, "~> 0.5.15"},
       {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 3.0"},
-      {:ecto_sql, "~> 3.0"}
+      {:ecto_sql, "~> 3.0"},
+      {:oban, "~> 2.19"}
     ]
   end
 end
