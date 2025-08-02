@@ -14,3 +14,7 @@ config :hello, Hello.Repo,
   username: "postgres",
   hostname: "postgres-db",
   password: "postgres"
+config :hello, Oban,
+  engine: Oban.Engines.Basic,
+  queues: [default: 10],
+  repo: Hello.Repo
