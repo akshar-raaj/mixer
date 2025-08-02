@@ -13,7 +13,7 @@ defmodule HelloSystem do
       "/app/hello"
   """
   def current_directory() do
-    System.cwd()
+    File.cwd!()
   end
 
   def environment_variable(var) do
