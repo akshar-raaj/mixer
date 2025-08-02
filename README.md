@@ -71,7 +71,35 @@ Define a Schema, say `Hello.Polls`. It must `use Ecto.Schema`
 
 #### Insert
 
+Ensure, `Hello.Repo` is started, in case you are working in iex.
+
+    Hello.Repo.start_link()
+
 Create a Poll.
 
     poll = %Hello.Polls{question: "Who was Dr. Kalam", difficulty: "easy"}
     Hello.Repo.insert!(poll)
+
+Create more polls
+
+    poll = %Hello.Polls{question: "Who is Pratibha Patil", difficulty: "medium"}
+    Hello.Repo.insert poll
+
+#### List polls
+
+    polls = Hello.Repo.all(Hello.Polls) # Returns a list
+
+    poll = Enum.at(polls, 1)  # Element at index 1 from the list
+    # Each list entry is a struct
+    IO.puts poll.question
+    questions = Enum.map(all_polls, fn poll -> poll.question end)
+
+#### Get a poll
+
+Getting a poll by primary key
+
+    Hello.Repo.get(Hello.Polls, 3)  
+
+Getting a poll by arbitrary field
+
+    Hello.Repo.get_by(Hello.Polls, question: "Who is Dr. Singh")
