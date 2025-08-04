@@ -3,6 +3,6 @@ defmodule Hello.HelloWorker do
 
   @impl Oban.Worker
   def perform(%Oban.Job{args: %{"message" => message}} = _args) do
-    IO.puts "Worker says: " <> message
+    IO.puts("Worker says: " <> message)
   end
 end
