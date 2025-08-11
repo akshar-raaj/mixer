@@ -20,3 +20,10 @@ defmodule HelloSystem do
     System.get_env(var)
   end
 end
+
+
+defmodule HelloMix do
+  def current_environment() do
+    Mix.env()
+  end
+end
