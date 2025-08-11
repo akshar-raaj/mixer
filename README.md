@@ -12,7 +12,7 @@ Project generated using:
 
 Applications have environment.
 
-Application environment can be set inside `application/0` using `:env`keyword.
+Application environment can be set inside `application/0` using `:env`keyword. `application/0` returns a keyword list.
 
 Application environments can be read in the code using:
 
@@ -37,6 +37,10 @@ Application environments can be updated in `config.exs`.
 
     import Config
     config :hello, :author, "Raaj Akshar"
+
+Environments defined in `config` takes precendence over `application/0` environment.
+
+Environment specific configuration can be set in `config/dev.exs`, `config/test.exs` etc. Configurations set in these files take precedence over `config/config.exs`.
 
 ### System
 
