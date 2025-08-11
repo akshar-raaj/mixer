@@ -1,12 +1,11 @@
 defmodule HelloTest do
   use ExUnit.Case
-  doctest Hello
 
-  test "greets the world" do
+  test "say hello" do
     assert Hello.hello() == :world
   end
 
-  test "greets personaly default" do
+  test "greet default" do
     assert Hello.greet() == "Hello, akshar!"
   end
 
