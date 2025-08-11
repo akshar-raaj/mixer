@@ -42,6 +42,24 @@ Environments defined in `config` takes precendence over `application/0` environm
 
 Environment specific configuration can be set in `config/dev.exs`, `config/test.exs` etc. Configurations set in these files take precedence over `config/config.exs`.
 
+### Iex
+
+Default invocation
+
+    iex -S mix
+
+The above would invoke the `dev` environment for Mix. This would cause `config/config.exs` to import `config/dev.exs`.
+
+We can check the current Mix environment using:
+
+    Mix.env()
+
+To start the Mix `test` environment, use:
+
+    MIX_ENV=test iex -S mix
+
+The aboue would cause `config/config.exs` to import `config/test.exs`
+
 ### System
 
 Environment variables are different from application environments.
