@@ -4,24 +4,34 @@ defmodule Person do
   end
 
   def predict_income(age, city \\ "Hyderabad") when is_number(age)  and is_binary(city) do
-    {:ok, age_income} = predict_age_income(age)
-    city_income = predict_city_income(city)
-    age_income + city_income
+    case predict_age_income(age) do
+      {:ok, age_income} ->
+        case predict_city_income(city) do
+          {:ok, city_income} -> age_income + city_income
+          error -> error
+        end
+      error -> error
+    end
   end
 
   def predict_income(age, city) do
-    IO.puts "Invalid input. Age must be a number and City must be a string. Provided values, age: #{age} and city: #{city}"
-    {:error, :invalid}
+    reason = "Invalid input. Age must be a number and City must be a string. Provided values, age: #{age} and city: #{city}"
+    {:error, reason}
   end
 
   defp predict_city_income(city) do
     case city do
-      "Hyderabad" -> 1000
-      "Bangalore" -> 800
-      "Delhi" -> 600
-      "Mumbai" -> 1200
-      _ -> :invalid
+      "Hyderabad" -> {:ok, 1000}
+      "Bangalore" -> {:ok, 800}
+      "Delhi" -> {:ok, 600}
+      "Mumbai" -> {:ok, 1200}
+      _ -> handle_invalid_city(city)
     end
+  end
+
+  defp handle_invalid_city(city) do
+    reason = "Supported cities: Hyderabad, Delhi, Mumbai, Bangalore. Provided city: #{city}"
+    {:error, reason}
   end
 
   defp predict_age_income(age) when age <= 100 and age > 20 do
@@ -32,10 +42,12 @@ defmodule Person do
   end
 
   defp predict_age_income(age) when age < 20 do
-    {:error, :minor}
+    reason = "Age must be greater than 20. Provided age: #{age}"
+    {:error, reason}
   end
 
   defp predict_age_income(age) when age > 100 do
-    {:error, :too_old}
+    reason = "Age must be less than 100. Provided age: #{age}"
+    {:error, reason}
   end
 end
