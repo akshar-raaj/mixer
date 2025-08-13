@@ -14,7 +14,7 @@ defmodule Person do
     {:error, :invalid}
   end
 
-  def predict_city_income(city) when is_binary(city) do
+  defp predict_city_income(city) do
     case city do
       "Hyderabad" -> 1000
       "Bangalore" -> 800
