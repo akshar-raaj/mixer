@@ -4,13 +4,9 @@ defmodule Person do
   end
 
   def predict_income(age, city \\ "Hyderabad") when is_number(age)  and is_binary(city) do
-    case predict_age_income(age) do
-      {:ok, age_income} ->
-        case predict_city_income(city) do
-          {:ok, city_income} -> age_income + city_income
-          error -> error
-        end
-      error -> error
+    with {:ok, age_income} <- predict_age_income(age),
+         {:ok, city_income} <- predict_city_income(city) do
+      age_income + city_income
     end
   end
 
