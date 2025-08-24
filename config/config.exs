@@ -1,9 +1,11 @@
 import Config
 
 config :hello,
-  author: "Raaj Akshar",
-  organisation: :ascend_together,
+  author: "Akshar Raaj",
+  organisation: :ascend,
   team: "EPD",
+  location: "Hyderabad",
+  cto: "Prasad Sristi",
   ecto_repos: [Hello.Repo]
 
 config :ex_aws,
@@ -21,6 +23,5 @@ config :hello, Oban,
   engine: Oban.Engines.Basic,
   queues: [default: 10],
   repo: Hello.Repo
-
 
 import_config "#{config_env()}.exs"
