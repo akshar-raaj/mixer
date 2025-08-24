@@ -1,4 +1,4 @@
-defmodule Hello do
+defmodule Hello.Hello do
   def hello do
     :world
   end
@@ -8,7 +8,7 @@ defmodule Hello do
   end
 end
 
-defmodule Hola do
+defmodule Hello.Hola do
   def hola do
     :mundo
   end
