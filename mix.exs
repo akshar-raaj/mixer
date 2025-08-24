@@ -14,13 +14,7 @@ defmodule Hello.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      env: [
-        author: "Akshar Raaj",
-        location: "Hyderabad",
-        organisation: :ascend,
-        cto: "Prasad Sristi"
-      ]
+      extra_applications: [:logger]
     ]
   end
 
