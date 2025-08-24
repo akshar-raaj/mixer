@@ -165,3 +165,14 @@ This has `choice.poll_id` populated. However `choice.poll` is still `#Ecto.Assoc
     second_choice = Enum.at(choices, 1)
 
     second_choice.poll.question  # Get second poll question
+
+### Oban
+
+Oban provides the background job processing framework. Can probably be thought of as the combination of Redis/RabbitMQ + Celery.
+
+Ensure Oban is configured appropriately in config. It requires an Ecto Repo to work.
+
+#### Starting Oban
+
+    Hello.Repo.start_link()
+    Oban.start_link([repo: Hello.Repo])
