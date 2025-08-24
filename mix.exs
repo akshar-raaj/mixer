@@ -17,8 +17,6 @@ defmodule Hello.MixProject do
       extra_applications: [:logger],
       env: [
         author: "Akshar Raaj",
-        location: "Hyderabad",
-        organisation: :ascend,
         cto: "Prasad Sristi"
       ]
     ]
