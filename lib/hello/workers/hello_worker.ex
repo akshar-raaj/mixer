@@ -1,4 +1,4 @@
-defmodule Hello.HelloWorker do
+defmodule Hello.Workers.HelloWorker do
   use Oban.Worker, queue: :default
   alias Hello.Repo
   alias Hello.Poll
