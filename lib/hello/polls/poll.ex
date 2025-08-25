@@ -1,16 +1,14 @@
-defmodule Hello.Poll do
+defmodule Hello.Polls.Poll do
   @moduledoc """
-    Represents a Question in the Polling application.
-
-    Examples:
-      iex> %Hello.Polls{question: "Who is Dr. Kalam", difficulty: "easy"}
+  Represents a Question in the Polling application.
   """
   use Ecto.Schema
   import Ecto.Changeset
+
   schema "polls" do
     field :question, :string
     field :difficulty, :string
-    has_many :choices, Hello.Choice
+    has_many :choices, Hello.Polls.Choice
   end
 
   def changeset(poll, params \\ %{}) do
@@ -19,3 +17,4 @@ defmodule Hello.Poll do
     |> validate_required([:question, :difficulty])
   end
 end
+

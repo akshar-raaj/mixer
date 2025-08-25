@@ -89,7 +89,7 @@ Define a Repository, say `Hello.Repo`. It must `use Ecto.Repo`.
 
 #### Schema
 
-Define a Schema, say `Hello.Poll`. It must `use Ecto.Schema`
+Define a Schema, say `Hello.Polls.Poll`. It must `use Ecto.Schema`
 
 #### Insert
 
@@ -99,17 +99,17 @@ Ensure, `Hello.Repo` is started, in case you are working in iex.
 
 Create a Poll.
 
-    poll = %Hello.Poll{question: "Who was Dr. Kalam", difficulty: "easy"}
+    poll = %Hello.Polls.Poll{question: "Who was Dr. Kalam", difficulty: "easy"}
     Hello.Repo.insert!(poll)
 
 Create more polls
 
-    poll = %Hello.Poll{question: "Who is Pratibha Patil", difficulty: "medium"}
+    poll = %Hello.Polls.Poll{question: "Who is Pratibha Patil", difficulty: "medium"}
     Hello.Repo.insert poll
 
 #### List polls
 
-    polls = Hello.Repo.all(Hello.Poll) # Returns a list
+    polls = Hello.Repo.all(Hello.Polls.Poll) # Returns a list
 
     poll = Enum.at(polls, 1)  # Element at index 1 from the list
     # Each list entry is a struct
@@ -120,11 +120,11 @@ Create more polls
 
 Getting a poll by primary key
 
-    Hello.Repo.get(Hello.Poll, 3)  
+    Hello.Repo.get(Hello.Polls.Poll, 3)  
 
 Getting a poll by arbitrary field
 
-    Hello.Repo.get_by(Hello.Poll, question: "Who is Dr. Singh")
+    Hello.Repo.get_by(Hello.Polls.Poll, question: "Who is Dr. Singh")
 
 #### Advanced Queries
 
@@ -133,33 +133,33 @@ Simple query is possible through just sending the schema as a parameter to `Repo
 Find polls with difficulty `easy`.
 
     import Ecto.Query  # Needed to use the `from` macro
-    query = from p in Hello.Poll, where: p.difficulty == "easy", select: p
+    query = from p in Hello.Polls.Poll, where: p.difficulty == "easy", select: p
     polls = Hello.Repo.all(query)
 
 #### Create choice
 
 We defined a `Choice` schema. A choice belongs to a poll. Poll has a one to many relationship with choice.
-It's modelled using `belongs_to` macro on `Hello.Choices` schema.
+It's modelled using `belongs_to` macro on `Hello.Polls.Choice` schema.
 
-    belongs_to :poll, Hello.Poll
+    belongs_to :poll, Hello.Polls.Poll
 
 Let's create a choice.
 
-    poll = Hello.Repo.get(Hello.Poll, 1)
+    poll = Hello.Repo.get(Hello.Polls.Poll, 1)
 
-    choice = %Hello.Choices{answer: "President of India", vote_count: 0, poll: poll}
+    choice = %Hello.Polls.Choice{answer: "President of India", vote_count: 0, poll: poll}
 
     Hello.Repo.insert(choice)
 
 #### Read Choice
 
-    choice = Hello.Repo.get(Hello.Choices, 2)
+    choice = Hello.Repo.get(Hello.Polls.Choice, 2)
 
 This has `choice.poll_id` populated. However `choice.poll` is still `#Ecto.Association.NotLoaded<association :poll is not loaded>`
 
 #### Load choice polls
 
-    query = from c in Hello.Choices, preload: [:poll]
+    query = from c in Hello.Polls.Choice, preload: [:poll]
     choices = Hello.Repo.all(query)
 
     second_choice = Enum.at(choices, 1)

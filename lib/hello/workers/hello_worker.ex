@@ -1,7 +1,7 @@
 defmodule Hello.Workers.HelloWorker do
   use Oban.Worker, queue: :default
   alias Hello.Repo
-  alias Hello.Poll
+  alias Hello.Polls.Poll
 
   @impl Oban.Worker
   def perform(%Oban.Job{args: %{"message" => message}} = _args) do
