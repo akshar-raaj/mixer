@@ -8,7 +8,7 @@ defmodule Person do
          {:ok, city_income} <- predict_city_income(city) do
       age_income + city_income
     else
-      {:error, reason} = error ->
+      {:error, reason} ->
         IO.puts("An error ocurred in the pipeline")
         IO.puts(reason)
         {:error, ""}
