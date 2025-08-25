@@ -5,9 +5,9 @@ config :hello,
   organisation: :ascend,
   team: "EPD",
   location: "Hyderabad",
-  cto: "Prasad Sristi",
-  ecto_repos: [Hello.Repo]
+  cto: "Prasad Sristi"
 
+config :hello, :ecto_repos, [Hello.Repo]
 
 config :hello, Hello.Repo,
   database: "throw",
