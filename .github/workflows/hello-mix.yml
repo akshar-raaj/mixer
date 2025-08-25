@@ -1,0 +1,13 @@
+name: Hello Mix
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo greeting
+        run: echo "Hello Mix"
+
