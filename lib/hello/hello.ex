@@ -6,4 +6,8 @@ defmodule Hello.Hello do
   def greet(name \\ "akshar") do
     "Hello, #{name}!"
   end
+
+  def bye do
+    :bye
+  end
 end
