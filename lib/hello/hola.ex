@@ -6,4 +6,8 @@ defmodule Hello.Hola do
   def saludar(nombre \\ "akshar") do
     "Hola " <> nombre
   end
+
+  def adios do
+    :adios
+  end
 end
