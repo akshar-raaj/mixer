@@ -21,11 +21,6 @@ defmodule Hello.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_aws, "~> 2.4"},
-      {:ex_aws_s3, "~> 2.4"},
-      {:hackney, "~> 1.18"},
-      {:sweet_xml, "~> 0.7"},
-      {:req, "~> 0.5.15"},
       {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 3.0"},
       {:ecto_sql, "~> 3.0"},

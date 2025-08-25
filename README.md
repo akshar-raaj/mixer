@@ -72,7 +72,7 @@ Other thing worth mentioning, didn't have to import `System` module before using
 
 Dependencies are added in `deps/0` in `mix.exs`.
 
-Each dependency is a length 2 tuple. Example `{:req, "~> 0.5.15"}`. The first element of the tuple is an atom, second element is a string.
+Each dependency is a length 2 tuple. Example `{:oban, "~> 2.19"}`. The first element of the tuple is an atom, second element is a string.
 
 ### Ecto
 
