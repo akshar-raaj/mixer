@@ -1,5 +1,9 @@
 ## Mix Hello World
 
+[![Elixir](https://img.shields.io/badge/Elixir-1.18-4B275F?logo=elixir&logoColor=white)](https://elixir-lang.org/)
+[![Database](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Last Commit](https://img.shields.io/github/last-commit/akshar-raaj/mixer)](https://github.com/akshar-raaj/mixer/commits)
+
 Getting started with Mix!
 
 Project generated using:
