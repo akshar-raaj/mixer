@@ -24,8 +24,7 @@ defmodule Hello.MixProject do
       {:jason, "~> 1.4"},
       {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 3.0"},
-      {:ecto_sql, "~> 3.0"},
-      {:oban, "~> 2.19"}
+      {:ecto_sql, "~> 3.0"}
     ]
   end
 end

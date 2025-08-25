@@ -15,9 +15,4 @@ config :hello, Hello.Repo,
   hostname: "postgres-db",
   password: "postgres"
 
-config :hello, Oban,
-  engine: Oban.Engines.Basic,
-  queues: [default: 10],
-  repo: Hello.Repo
-
 import_config "#{config_env()}.exs"
