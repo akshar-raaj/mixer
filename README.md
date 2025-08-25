@@ -165,5 +165,3 @@ This has `choice.poll_id` populated. However `choice.poll` is still `#Ecto.Assoc
     second_choice = Enum.at(choices, 1)
 
     second_choice.poll.question  # Get second poll question
-
- 
