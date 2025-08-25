@@ -28,5 +28,3 @@ defmodule Hello.MixProject do
     ]
   end
 end
-
-
