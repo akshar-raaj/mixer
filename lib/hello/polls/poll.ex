@@ -17,4 +17,3 @@ defmodule Hello.Polls.Poll do
     |> validate_required([:question, :difficulty])
   end
 end
-

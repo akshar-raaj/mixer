@@ -14,4 +14,3 @@ defmodule Hello.Polls.Choice do
     |> validate_required([:answer, :vote_count])
   end
 end
-
