@@ -15,19 +15,21 @@ defmodule Hello.Polls.Service do
 
   def earliest_poll do
     Poll
-    |> Ecto.Query.first
-    |> Repo.one
+    |> Ecto.Query.first()
+    |> Repo.one()
   end
 
   def latest_poll do
     Poll
-    |> Ecto.Query.last
-    |> Repo.one
+    |> Ecto.Query.last()
+    |> Repo.one()
   end
 
   def list_polls do
     query = from p in Poll, select: p, preload: [:choices]
-    Repo.all(query)
+
+    query
+    |> Repo.all()
   end
 
   def create_choice(answer, vote_count \\ 0) do
@@ -36,4 +38,3 @@ defmodule Hello.Polls.Service do
     |> Repo.insert()
   end
 end
-
