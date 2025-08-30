@@ -169,3 +169,38 @@ This has `choice.poll_id` populated. However `choice.poll` is still `#Ecto.Assoc
     second_choice = Enum.at(choices, 1)
 
     second_choice.poll.question  # Get second poll question
+
+### Testing
+
+Elixir projects use ExUnit for testing.
+
+- Run all tests:
+
+      mix test
+
+- File naming: ExUnit discovers only files matching `*_test.exs` under `test/`.
+  - Example: `test/test_mix.exs` will NOT run; rename to `test/mix_test.exs`.
+
+- Test helper: `test/test_helper.exs` should call `ExUnit.start()`; it runs automatically.
+
+- Run a single file:
+
+      mix test test/hello/hello_test.exs
+
+- Run a single test (by line number):
+
+      mix test test/hello/hello_test.exs:12
+
+- List tests without running them:
+
+      mix test --list
+
+- Verbose per-test output (no colorized progress bar):
+
+      mix test --trace
+
+- Tags (optional): mark tests with `@tag slow: true` and run only tagged ones:
+
+      mix test --only slow
+
+- Doctests (optional): include `doctest MyModule` inside a test module to run code examples from `@doc` blocks.
