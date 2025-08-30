@@ -12,6 +12,18 @@ Project generated using:
 
 ## Learnings
 
+### Basics
+
+Defined a simple math module `Hello.Maths` to practice defining modules and functions.
+
+- add/2: sums two numbers.
+- subtract/2: subtracts the second from the first.
+
+Example usage in iex:
+
+    Hello.Maths.add(2, 3)      # 5
+    Hello.Maths.subtract(10, 4) # 6
+
 ### Application
 
 Applications have environment.
