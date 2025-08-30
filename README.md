@@ -26,6 +26,17 @@ Example usage in iex:
 
 ### Application
 
+Added an application supervisor to start `Hello.Repo` automatically, so you no longer need to call `Hello.Repo.start_link()` in iex. The supervisor is defined in `lib/hello/application.ex` and wired via `mod: {Hello.Application, []}` in `mix.exs`.
+
+Children:
+- `Hello.Repo` — Ecto repository
+
+Start the app (iex):
+
+    iex -S mix
+
+Now `Hello.Repo` is started by the supervisor.
+
 Applications have environment.
 
 Application environment can be set inside `application/0` using `:env`keyword. `application/0` returns a keyword list.
