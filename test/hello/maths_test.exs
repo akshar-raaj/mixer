@@ -25,4 +25,3 @@ defmodule Hello.MathsTest do
     assert Hello.Maths.subtract(2, 5) == -3
   end
 end
-

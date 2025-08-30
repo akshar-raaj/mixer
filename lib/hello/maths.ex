@@ -3,4 +3,3 @@ defmodule Hello.Maths do
 
   def subtract(a, b), do: a - b
 end
-
