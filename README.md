@@ -227,3 +227,26 @@ Elixir projects use ExUnit for testing.
       mix test --only slow
 
 - Doctests (optional): include `doctest MyModule` inside a test module to run code examples from `@doc` blocks.
+
+#### Test Database (Ecto)
+
+To run database tests against an isolated test DB:
+
+1) Configure the test database in `config/test.exs` (overrides dev config):
+
+       import Config
+       config :hello, Hello.Repo,
+         database: "hello_test",
+         username: "postgres",
+         password: "postgres",
+         hostname: "postgres-db"
+
+2) Create the test database using the test environment:
+
+       MIX_ENV=test mix ecto.create
+
+   Using `MIX_ENV=test` ensures `config/test.exs` is applied instead of `config/dev.exs`.
+
+3) Apply migrations to the test database (still in test env):
+
+       MIX_ENV=test mix ecto.migrate
