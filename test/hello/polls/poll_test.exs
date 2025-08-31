@@ -26,7 +26,7 @@ defmodule Hello.Polls.PollTest do
     assert poll_count == 0
     poll = %Poll{}
     changeset = Poll.changeset(poll, %{question: "How is the weather?", difficulty: "easy"})
-    {:ok, _poll} = changeset |> Repo.insert
+    {:ok, _poll} = changeset |> Repo.insert()
     poll_count = Poll |> Repo.aggregate(:count, :id)
     assert poll_count == 1
   end
